@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>828592517539-m72ef137bpm8gd05anidue563du7tf2r.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.828592517539-m72ef137bpm8gd05anidue563du7tf2r</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCmeu-bESEBuzHKxcylIjB46lmaKB6cPBs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>828592517539</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kudoichika.Route-Tracking</string>
+	<key>PROJECT_ID</key>
+	<string>route-tracker-d8765</string>
+	<key>STORAGE_BUCKET</key>
+	<string>route-tracker-d8765.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:828592517539:ios:3e96ddc5d0d36aded6aa16</string>
+	<key>DATABASE_URL</key>
+	<string>https://route-tracker-d8765.firebaseio.com</string>
+</dict>
+</plist>
