@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Route_Tracking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jn4-hX-w2g">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qro-CA-DYu">
+                                <rect key="frame" x="57" y="752" width="60" height="60"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="EU2-ez-GnE"/>
+                                    <constraint firstAttribute="width" constant="60" id="Wdy-2s-2qh"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="bolt.horizontal.icloud.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="heavy"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1A-tC-vNx">
+                                <rect key="frame" x="177" y="752" width="60" height="60"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Jem-9U-Qat"/>
+                                    <constraint firstAttribute="height" constant="60" id="dbO-Fz-b6W"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="play.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="heavy"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHV-qA-X0h">
+                                <rect key="frame" x="297" y="752" width="60" height="60"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Ath-kO-mV6"/>
+                                    <constraint firstAttribute="height" constant="60" id="Pw7-wh-ERB"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="location.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="heavy"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Jn4-hX-w2g" secondAttribute="bottom" id="0j8-nZ-tN1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qro-CA-DYu" secondAttribute="bottom" constant="50" id="9XA-QB-5eB"/>
+                            <constraint firstItem="I1A-tC-vNx" firstAttribute="leading" secondItem="qro-CA-DYu" secondAttribute="trailing" constant="60" id="EuW-3e-phW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="I1A-tC-vNx" secondAttribute="bottom" constant="50" id="FH2-3g-FL7"/>
+                            <constraint firstItem="Jn4-hX-w2g" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KgQ-Gt-7Vo"/>
+                            <constraint firstItem="Jn4-hX-w2g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Yzk-pe-gAz"/>
+                            <constraint firstItem="I1A-tC-vNx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cIG-df-tdK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pHV-qA-X0h" secondAttribute="bottom" constant="50" id="mFa-kV-N42"/>
+                            <constraint firstItem="pHV-qA-X0h" firstAttribute="leading" secondItem="I1A-tC-vNx" secondAttribute="trailing" constant="60" id="tic-NQ-cB5"/>
+                            <constraint firstItem="Jn4-hX-w2g" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xPe-1M-g4K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="dataButton" destination="qro-CA-DYu" id="ZCE-su-YJs"/>
+                        <outlet property="locButton" destination="pHV-qA-X0h" id="c4P-IP-Wm5"/>
+                        <outlet property="mapView" destination="Jn4-hX-w2g" id="k0p-28-Olw"/>
+                        <outlet property="routeButton" destination="I1A-tC-vNx" id="khD-Zn-1eC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bolt.horizontal.icloud.fill" catalog="system" width="128" height="88"/>
+        <image name="location.fill" catalog="system" width="128" height="115"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+    </resources>
+</document>
