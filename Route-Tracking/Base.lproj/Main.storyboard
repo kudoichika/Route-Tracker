@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Route_Tracking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Route_Tracking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,7 +142,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4n5-rB-AdJ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4n5-rB-AdJ">
                                 <rect key="frame" x="40" y="194" width="334" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="pYE-7B-ZU5"/>
@@ -188,9 +188,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="wmh-Oa-9sG"/>
                     <connections>
+                        <outlet property="emailTextField" destination="4n5-rB-AdJ" id="Vn5-Qx-Xvi"/>
                         <outlet property="loginButton" destination="I0p-aM-MaQ" id="zQK-6z-eaM"/>
                         <outlet property="passwordTextField" destination="RRg-0l-dUt" id="c3Q-qA-Fmb"/>
-                        <outlet property="usernameTextField" destination="4n5-rB-AdJ" id="Zaa-cR-dT3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0j-V3-y6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -221,16 +221,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v07-WU-6GZ">
-                                <rect key="frame" x="40" y="284" width="334" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="oer-bf-Z5o"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u4t-gk-1Jg">
-                                <rect key="frame" x="40" y="354" width="334" height="40"/>
+                                <rect key="frame" x="40" y="284" width="334" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="rA7-lX-qoJ"/>
                                 </constraints>
@@ -238,7 +230,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nj2-uq-9Al">
-                                <rect key="frame" x="144.5" y="444" width="125" height="50"/>
+                                <rect key="frame" x="144.5" y="374" width="125" height="50"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="Dp0-l2-fvf"/>
@@ -254,15 +246,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="v07-WU-6GZ" firstAttribute="leading" secondItem="0Gw-9m-dvA" secondAttribute="leading" constant="40" id="2BD-Zj-kL6"/>
+                            <constraint firstItem="u4t-gk-1Jg" firstAttribute="top" secondItem="QbF-Cv-GxZ" secondAttribute="bottom" constant="30" id="3LJ-XP-eCT"/>
                             <constraint firstItem="0Gw-9m-dvA" firstAttribute="trailing" secondItem="u4t-gk-1Jg" secondAttribute="trailing" constant="40" id="3PG-5Q-n0t"/>
                             <constraint firstItem="0Gw-9m-dvA" firstAttribute="trailing" secondItem="b2M-wO-04m" secondAttribute="trailing" constant="40" id="AtX-FC-8ye"/>
-                            <constraint firstItem="v07-WU-6GZ" firstAttribute="top" secondItem="QbF-Cv-GxZ" secondAttribute="bottom" constant="30" id="CgB-PT-cXo"/>
                             <constraint firstItem="0Gw-9m-dvA" firstAttribute="trailing" secondItem="QbF-Cv-GxZ" secondAttribute="trailing" constant="40" id="DLn-p7-s7h"/>
                             <constraint firstItem="u4t-gk-1Jg" firstAttribute="leading" secondItem="0Gw-9m-dvA" secondAttribute="leading" constant="40" id="Kj4-nb-Ytf"/>
                             <constraint firstItem="QbF-Cv-GxZ" firstAttribute="leading" secondItem="0Gw-9m-dvA" secondAttribute="leading" constant="40" id="MlX-x2-TGb"/>
-                            <constraint firstItem="0Gw-9m-dvA" firstAttribute="trailing" secondItem="v07-WU-6GZ" secondAttribute="trailing" constant="40" id="Qjj-TT-FXH"/>
-                            <constraint firstItem="u4t-gk-1Jg" firstAttribute="top" secondItem="v07-WU-6GZ" secondAttribute="bottom" constant="30" id="RYT-II-5lI"/>
                             <constraint firstItem="b2M-wO-04m" firstAttribute="top" secondItem="0Gw-9m-dvA" secondAttribute="top" constant="100" id="Vlb-bL-zZ0"/>
                             <constraint firstItem="nj2-uq-9Al" firstAttribute="centerX" secondItem="Y8y-8T-7vN" secondAttribute="centerX" id="aHA-Vu-llC"/>
                             <constraint firstItem="QbF-Cv-GxZ" firstAttribute="top" secondItem="b2M-wO-04m" secondAttribute="bottom" constant="30" id="cX5-uG-XNh"/>
@@ -275,7 +264,6 @@
                         <outlet property="emailTextField" destination="QbF-Cv-GxZ" id="Lyv-en-WGH"/>
                         <outlet property="nameTextField" destination="b2M-wO-04m" id="paZ-9N-gEk"/>
                         <outlet property="passwordTextField" destination="u4t-gk-1Jg" id="Qqn-A9-iz2"/>
-                        <outlet property="usernameTextField" destination="v07-WU-6GZ" id="40G-mG-OnG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ex-M6-Lzs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

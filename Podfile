@@ -7,5 +7,6 @@ target 'Route-Tracking' do
 
   # Pods for Route-Tracking
   pod 'Firebase/Auth'
-
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
 end

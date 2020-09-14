@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -51,7 +51,6 @@
 		8340B48F250F086400815C77 = {
 			isa = PBXGroup;
 			children = (
-				8340B4B1250F113700815C77 /* RegisterViewController.swift */,
 				8340B49A250F086400815C77 /* Route-Tracking */,
 				8340B499250F086400815C77 /* Products */,
 				84AB787B1DE50DD37209F891 /* Pods */,
@@ -73,12 +72,13 @@
 				8340B49B250F086400815C77 /* AppDelegate.swift */,
 				8340B49D250F086400815C77 /* SceneDelegate.swift */,
 				8340B49F250F086400815C77 /* ViewController.swift */,
+				8340B4AF250F112500815C77 /* LoginViewController.swift */,
+				8340B4B1250F113700815C77 /* RegisterViewController.swift */,
 				8340B4A1250F086400815C77 /* Main.storyboard */,
 				8340B4A4250F086800815C77 /* Assets.xcassets */,
 				8340B4A6250F086800815C77 /* LaunchScreen.storyboard */,
 				8340B4A9250F086800815C77 /* Info.plist */,
 				8340B4B5250F13F100815C77 /* GoogleService-Info.plist */,
-				8340B4AF250F112500815C77 /* LoginViewController.swift */,
 			);
 			path = "Route-Tracking";
 			sourceTree = "<group>";
@@ -89,7 +89,6 @@
 				2E2B5409A9B4BFF66EFD6EFC /* Pods-Route-Tracking.debug.xcconfig */,
 				343546E6BFFC26232122AB77 /* Pods-Route-Tracking.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
