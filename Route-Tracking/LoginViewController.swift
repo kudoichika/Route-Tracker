@@ -26,12 +26,13 @@ class LoginViewController: UIViewController {
         let email = emailTextField.text!.trimmingCharacters(in : .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in : .whitespacesAndNewlines)
         Auth.auth().signIn(withEmail: email, password : password){ (result, error) in
-        if error != nil {
-            print("Error creating user")
-        } else {
-            let nextVC = self.storyboard?.instantiateViewController(withIdentifier : "MainView") as? ViewController
-            self.view.window?.rootViewController = nextVC
-            self.view.window?.makeKeyAndVisible()
+            if error != nil {
+                print("Error creating user")
+            } else {
+                let nextVC = self.storyboard?.instantiateViewController(withIdentifier : "MainView") as? ViewController
+                self.view.window?.rootViewController = nextVC
+                self.view.window?.makeKeyAndVisible()
+            }
         }
     }
     

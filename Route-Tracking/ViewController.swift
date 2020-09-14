@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import FirebaseFirestore
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -47,6 +48,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
         
+        routeButton.addTarget(self, action: #selector(storeLoc), for: .touchUpInside)
         locButton.addTarget(self, action: #selector(centerLoc), for: .touchUpInside)
     }
     
@@ -59,6 +61,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let span = MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
         let region = MKCoordinateRegion(center: center, span: span)
         self.mapView.setRegion(region, animated: true)
+    }
+    
+    @objc func storeLoc() {
+        let db = Firestore.firestore()
+        db.collection("location").addDocument(data : []) { (error) in
+            if error != nil {
+                
+            } else {
+                print("Successful Update")
+            }
+        }
     }
 
 }
