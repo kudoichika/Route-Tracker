@@ -14,11 +14,13 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    
 
     @IBOutlet weak var mapView: MKMapView!
     var locationManager: CLLocationManager!
     var location : CLLocation!
     
+    @IBOutlet weak var optionButton: UIButton!
     @IBOutlet weak var dataButton: UIButton!
     @IBOutlet weak var routeButton: UIButton!
     @IBOutlet weak var locButton: UIButton!
@@ -29,9 +31,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        buttons = [dataButton, routeButton, locButton]
+        buttons = [optionButton, dataButton, routeButton, locButton]
         for button in buttons {
             button.layer.cornerRadius = button.layer.frame.height / 2
+            button.layer.borderWidth = 1.5
+            button.layer.borderColor = UIColor.gray.cgColor
         }
         
         let user = Auth.auth().currentUser
@@ -87,6 +91,16 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 print("Error storing geolocation")
             } else {
                 print("Successfully stored location")
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "logoutSegue" {
+            do {
+                try Auth.auth().signOut()
+            } catch {
+                print("Already Logged Out")
             }
         }
     }

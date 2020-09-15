@@ -16,6 +16,7 @@
 		8340B4B0250F112500815C77 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B4AF250F112500815C77 /* LoginViewController.swift */; };
 		8340B4B2250F113700815C77 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B4B1250F113700815C77 /* RegisterViewController.swift */; };
 		8340B4B6250F13F100815C77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8340B4B5250F13F100815C77 /* GoogleService-Info.plist */; };
+		8340B4B825107B9600815C77 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B4B725107B9600815C77 /* HistoryViewController.swift */; };
 		D9D1215C308804280E404166 /* Pods_Route_Tracking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029DBA2337D5DFF048DC06C4 /* Pods_Route_Tracking.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		8340B4AF250F112500815C77 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8340B4B1250F113700815C77 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8340B4B5250F13F100815C77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8340B4B725107B9600815C77 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				8340B49F250F086400815C77 /* ViewController.swift */,
 				8340B4AF250F112500815C77 /* LoginViewController.swift */,
 				8340B4B1250F113700815C77 /* RegisterViewController.swift */,
+				8340B4B725107B9600815C77 /* HistoryViewController.swift */,
 				8340B4A1250F086400815C77 /* Main.storyboard */,
 				8340B4A4250F086800815C77 /* Assets.xcassets */,
 				8340B4A6250F086800815C77 /* LaunchScreen.storyboard */,
@@ -219,6 +222,7 @@
 				8340B4B0250F112500815C77 /* LoginViewController.swift in Sources */,
 				8340B4B2250F113700815C77 /* RegisterViewController.swift in Sources */,
 				8340B4A0250F086400815C77 /* ViewController.swift in Sources */,
+				8340B4B825107B9600815C77 /* HistoryViewController.swift in Sources */,
 				8340B49C250F086400815C77 /* AppDelegate.swift in Sources */,
 				8340B49E250F086400815C77 /* SceneDelegate.swift in Sources */,
 			);
@@ -368,6 +372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CQMR8VM2P;
 				INFOPLIST_FILE = "Route-Tracking/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,6 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CQMR8VM2P;
 				INFOPLIST_FILE = "Route-Tracking/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

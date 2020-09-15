@@ -57,6 +57,22 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="heavy"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzj-LK-IWV">
+                                <rect key="frame" x="30" y="74" width="45" height="45"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="4hE-4J-AJJ"/>
+                                    <constraint firstAttribute="height" constant="45" id="iQy-Ah-HnN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="person.crop.circle.badge.xmark" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="19" scale="large" weight="semibold"/>
+                                </state>
+                                <connections>
+                                    <segue destination="f0W-dx-phq" kind="presentation" identifier="logoutSegue" modalPresentationStyle="fullScreen" id="tE0-Ie-hZW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -64,7 +80,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qro-CA-DYu" secondAttribute="bottom" constant="50" id="9XA-QB-5eB"/>
                             <constraint firstItem="I1A-tC-vNx" firstAttribute="leading" secondItem="qro-CA-DYu" secondAttribute="trailing" constant="60" id="EuW-3e-phW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="I1A-tC-vNx" secondAttribute="bottom" constant="50" id="FH2-3g-FL7"/>
+                            <constraint firstItem="rzj-LK-IWV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="I6q-RS-gva"/>
                             <constraint firstItem="Jn4-hX-w2g" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KgQ-Gt-7Vo"/>
+                            <constraint firstItem="rzj-LK-IWV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="TsQ-Eg-fY4"/>
                             <constraint firstItem="Jn4-hX-w2g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Yzk-pe-gAz"/>
                             <constraint firstItem="I1A-tC-vNx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cIG-df-tdK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pHV-qA-X0h" secondAttribute="bottom" constant="50" id="mFa-kV-N42"/>
@@ -77,6 +95,7 @@
                         <outlet property="dataButton" destination="qro-CA-DYu" id="ZCE-su-YJs"/>
                         <outlet property="locButton" destination="pHV-qA-X0h" id="c4P-IP-Wm5"/>
                         <outlet property="mapView" destination="Jn4-hX-w2g" id="k0p-28-Olw"/>
+                        <outlet property="optionButton" destination="rzj-LK-IWV" id="qan-J2-A4y"/>
                         <outlet property="routeButton" destination="I1A-tC-vNx" id="khD-Zn-1eC"/>
                     </connections>
                 </viewController>
@@ -87,7 +106,7 @@
         <!--View Controller-->
         <scene sceneID="X7e-g2-9jI">
             <objects>
-                <viewController id="f0W-dx-phq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f0W-dx-phq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Icu-bB-jsP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,6 +151,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dne-Le-DHL"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ccu-d6-AtE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NEP-Pv-zsl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -273,10 +293,10 @@
             </objects>
             <point key="canvasLocation" x="-475" y="525"/>
         </scene>
-        <!--View Controller-->
+        <!--History View Controller-->
         <scene sceneID="Kv7-Rt-7B2">
             <objects>
-                <viewController id="4W9-1e-rc5" sceneMemberID="viewController">
+                <viewController id="4W9-1e-rc5" customClass="HistoryViewController" customModule="Route_Tracking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QbL-em-sjA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,15 +305,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Past Data" id="r4W-eP-2SX">
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="d4V-5Q-zND">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wj2-KS-bhP">
-                                                <rect key="frame" x="369" y="3.5" width="25" height="37"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                                <state key="normal" image="play.fill" catalog="system">
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="black"/>
-                                                </state>
-                                            </button>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="play.fill" catalog="system" id="05E-9S-aOa">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="Txx-rT-t73"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -321,9 +336,13 @@
             <point key="canvasLocation" x="653.62318840579712" y="77.678571428571431"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bMw-aM-LU9"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bolt.horizontal.icloud.fill" catalog="system" width="128" height="88"/>
         <image name="location.fill" catalog="system" width="128" height="115"/>
+        <image name="person.crop.circle.badge.xmark" catalog="system" width="128" height="101"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
     </resources>
 </document>
