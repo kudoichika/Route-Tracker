@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Firebase
+import FirebaseAuth
 import FirebaseFirestore
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
@@ -20,8 +22,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet weak var dataButton: UIButton!
     @IBOutlet weak var routeButton: UIButton!
     @IBOutlet weak var locButton: UIButton!
-    
     var buttons : Array<UIButton>!
+    
+    var id : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         for button in buttons {
             button.layer.cornerRadius = button.layer.frame.height / 2
         }
+        
+        let user = Auth.auth().currentUser
+        id = user!.uid
         
         mapView.delegate = self
         mapView.showsUserLocation = true
@@ -53,7 +59,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        self.location = locations.last as CLLocation?
+        location = locations.last as CLLocation?
     }
     
     @objc func centerLoc() {
@@ -64,12 +70,23 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     @objc func storeLoc() {
+        
+        let geo = GeoPoint.init(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+        let time = NSDate().timeIntervalSince1970
+        
+        /*
+         Decoding
+         let myTimeInterval = TimeInterval(timestamp)
+         let time = NSDate(timeIntervalSince1970: TimeInterval(myTimeInterval))
+         */
+        
         let db = Firestore.firestore()
-        db.collection("location").addDocument(data : []) { (error) in
+        let doc = db.collection("location").document(id!)
+        doc.collection("points").addDocument(data: ["geo": geo, "time": time]) {(error) in
             if error != nil {
-                
+                print("Error storing geolocation")
             } else {
-                print("Successful Update")
+                print("Successfully stored location")
             }
         }
     }
