@@ -54,6 +54,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83152E062512D1FA00B368CF /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				8340B4AF250F112500815C77 /* LoginViewController.swift */,
+				8340B4B1250F113700815C77 /* RegisterViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		83152E072512D22300B368CF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8340B4B725107B9600815C77 /* HistoryViewController.swift */,
+				83152E042512C35B00B368CF /* DataViewController.swift */,
+				83152E02251283AC00B368CF /* Models.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		8340B48F250F086400815C77 = {
 			isa = PBXGroup;
 			children = (
@@ -76,13 +95,10 @@
 			isa = PBXGroup;
 			children = (
 				8340B49B250F086400815C77 /* AppDelegate.swift */,
-				8340B49D250F086400815C77 /* SceneDelegate.swift */,
 				8340B49F250F086400815C77 /* ViewController.swift */,
-				8340B4AF250F112500815C77 /* LoginViewController.swift */,
-				8340B4B1250F113700815C77 /* RegisterViewController.swift */,
-				8340B4B725107B9600815C77 /* HistoryViewController.swift */,
-				83152E042512C35B00B368CF /* DataViewController.swift */,
-				83152E02251283AC00B368CF /* Models.swift */,
+				8340B49D250F086400815C77 /* SceneDelegate.swift */,
+				83152E072512D22300B368CF /* App */,
+				83152E062512D1FA00B368CF /* Authentication */,
 				8340B4A1250F086400815C77 /* Main.storyboard */,
 				8340B4A4250F086800815C77 /* Assets.xcassets */,
 				8340B4A6250F086800815C77 /* LaunchScreen.storyboard */,
