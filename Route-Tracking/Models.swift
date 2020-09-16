@@ -35,13 +35,18 @@ class GeoData {
     }
     func postData(id : String, col : String, subcol : String) {
         let db = Firestore.firestore()
-        let doc = db.collection("location").document(id)
-        doc.collection(col).addDocument(data : toDict()) { (error) in
+        let doc = db.collection(col).document(id)
+        doc.collection(subcol).addDocument(data : toDict()) { (error) in
             if error != nil {
                 print("Error storing geolocation")
             } else {
                 print("Successful stored location")
             }
         }
+    }
+    func timestampToString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yyyy HH:mm"
+        return formatter.string(from: timestamp! as Date)
     }
 }

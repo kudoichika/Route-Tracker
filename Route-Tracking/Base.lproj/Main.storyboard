@@ -101,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1765" y="78"/>
+            <point key="canvasLocation" x="2042" y="-131"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="X7e-g2-9jI">
@@ -291,7 +291,70 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ex-M6-Lzs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-475" y="525"/>
+            <point key="canvasLocation" x="-475" y="571"/>
+        </scene>
+        <!--Data View Controller-->
+        <scene sceneID="MLX-YY-Z5v">
+            <objects>
+                <viewController storyboardIdentifier="DataView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="77K-3M-MTj" customClass="DataViewController" customModule="Route_Tracking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ppn-Ih-a5Z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AyO-6b-lSa">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAD-O4-Bhp">
+                                <rect key="frame" x="30" y="74" width="45" height="45"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="M2z-MJ-VqI"/>
+                                    <constraint firstAttribute="height" constant="45" id="kbR-mc-3ef"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrow.left" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="19" scale="large" weight="semibold"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4W9-1e-rc5" kind="presentation" modalPresentationStyle="fullScreen" id="lFh-gb-BNM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZN-hi-PdS">
+                                <rect key="frame" x="177" y="752" width="60" height="60"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="5vW-JG-ulr"/>
+                                    <constraint firstAttribute="height" constant="60" id="6Hh-Vp-zYM"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="link" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="heavy"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="AyO-6b-lSa" firstAttribute="top" secondItem="rPI-QL-dUe" secondAttribute="top" id="5dQ-JR-X0J"/>
+                            <constraint firstItem="rPI-QL-dUe" firstAttribute="trailing" secondItem="AyO-6b-lSa" secondAttribute="trailing" id="DvO-TA-yad"/>
+                            <constraint firstItem="rPI-QL-dUe" firstAttribute="bottom" secondItem="CZN-hi-PdS" secondAttribute="bottom" constant="50" id="FfZ-P7-Iu1"/>
+                            <constraint firstItem="CAD-O4-Bhp" firstAttribute="leading" secondItem="rPI-QL-dUe" secondAttribute="leading" constant="30" id="Fqo-GH-hl7"/>
+                            <constraint firstItem="CZN-hi-PdS" firstAttribute="centerX" secondItem="Ppn-Ih-a5Z" secondAttribute="centerX" id="ICF-4K-3xT"/>
+                            <constraint firstItem="CAD-O4-Bhp" firstAttribute="top" secondItem="rPI-QL-dUe" secondAttribute="top" constant="30" id="ak6-5H-PZm"/>
+                            <constraint firstItem="AyO-6b-lSa" firstAttribute="leading" secondItem="rPI-QL-dUe" secondAttribute="leading" id="drP-CI-prA"/>
+                            <constraint firstItem="rPI-QL-dUe" firstAttribute="bottom" secondItem="AyO-6b-lSa" secondAttribute="bottom" id="j0c-qU-mlM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rPI-QL-dUe"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="CAD-O4-Bhp" id="hQs-ya-JIg"/>
+                        <outlet property="mapView" destination="AyO-6b-lSa" id="rfP-g9-2l4"/>
+                        <outlet property="shareButton" destination="CZN-hi-PdS" id="pCs-X6-5tE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8o6-yn-2eP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="811" y="571"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="Kv7-Rt-7B2">
@@ -336,14 +399,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2f-fI-2ZZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653.62318840579712" y="77.678571428571431"/>
+            <point key="canvasLocation" x="816" y="-131"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Txx-rT-t73"/>
+        <segue reference="lFh-gb-BNM"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="bolt.horizontal.icloud.fill" catalog="system" width="128" height="88"/>
+        <image name="link" catalog="system" width="128" height="116"/>
         <image name="location.fill" catalog="system" width="128" height="115"/>
         <image name="person.crop.circle.badge.xmark" catalog="system" width="128" height="101"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
