@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83152E03251283AC00B368CF /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83152E02251283AC00B368CF /* Models.swift */; };
 		8340B49C250F086400815C77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B49B250F086400815C77 /* AppDelegate.swift */; };
 		8340B49E250F086400815C77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B49D250F086400815C77 /* SceneDelegate.swift */; };
 		8340B4A0250F086400815C77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B49F250F086400815C77 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 		029DBA2337D5DFF048DC06C4 /* Pods_Route_Tracking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Route_Tracking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E2B5409A9B4BFF66EFD6EFC /* Pods-Route-Tracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route-Tracking.debug.xcconfig"; path = "Target Support Files/Pods-Route-Tracking/Pods-Route-Tracking.debug.xcconfig"; sourceTree = "<group>"; };
 		343546E6BFFC26232122AB77 /* Pods-Route-Tracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route-Tracking.release.xcconfig"; path = "Target Support Files/Pods-Route-Tracking/Pods-Route-Tracking.release.xcconfig"; sourceTree = "<group>"; };
+		83152E02251283AC00B368CF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		8340B498250F086400815C77 /* Route-Tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Route-Tracking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8340B49B250F086400815C77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8340B49D250F086400815C77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				8340B4AF250F112500815C77 /* LoginViewController.swift */,
 				8340B4B1250F113700815C77 /* RegisterViewController.swift */,
 				8340B4B725107B9600815C77 /* HistoryViewController.swift */,
+				83152E02251283AC00B368CF /* Models.swift */,
 				8340B4A1250F086400815C77 /* Main.storyboard */,
 				8340B4A4250F086800815C77 /* Assets.xcassets */,
 				8340B4A6250F086800815C77 /* LaunchScreen.storyboard */,
@@ -225,6 +228,7 @@
 				8340B4B825107B9600815C77 /* HistoryViewController.swift in Sources */,
 				8340B49C250F086400815C77 /* AppDelegate.swift in Sources */,
 				8340B49E250F086400815C77 /* SceneDelegate.swift in Sources */,
+				83152E03251283AC00B368CF /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

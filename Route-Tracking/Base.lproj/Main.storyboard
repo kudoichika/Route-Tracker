@@ -330,6 +330,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="at4-QN-REs"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Yt4-YA-P5J" id="2d3-X5-qla"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2f-fI-2ZZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -337,7 +340,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bMw-aM-LU9"/>
+        <segue reference="Txx-rT-t73"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bolt.horizontal.icloud.fill" catalog="system" width="128" height="88"/>

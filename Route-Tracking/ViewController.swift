@@ -74,25 +74,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     @objc func storeLoc() {
-        
-        let geo = GeoPoint.init(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
-        let time = NSDate().timeIntervalSince1970
-        
-        /*
-         Decoding
-         let myTimeInterval = TimeInterval(timestamp)
-         let time = NSDate(timeIntervalSince1970: TimeInterval(myTimeInterval))
-         */
-        
-        let db = Firestore.firestore()
-        let doc = db.collection("location").document(id!)
-        doc.collection("points").addDocument(data: ["geo": geo, "time": time]) {(error) in
-            if error != nil {
-                print("Error storing geolocation")
-            } else {
-                print("Successfully stored location")
-            }
-        }
+        let data = GeoData(lat: location!.coordinate.latitude, long: location!.coordinate.longitude)
+        data.postData(id: id!, col: "location", subcol: "points")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
