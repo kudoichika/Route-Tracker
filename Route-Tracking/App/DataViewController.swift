@@ -13,6 +13,7 @@ import CoreLocation
 class DataViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
@@ -28,6 +29,10 @@ class DataViewController: UIViewController, MKMapViewDelegate {
             button.layer.borderWidth = 1.5
             button.layer.borderColor = UIColor.gray.cgColor
         }
+        
+        navBar.topItem?.title = geodata.timestampToString()
+        
+        backButton.layer.zPosition = navBar.layer.zPosition + 1
         
         mapView.delegate = self
         mapView.mapType = MKMapType(rawValue: 0)!

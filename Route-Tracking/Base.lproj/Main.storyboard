@@ -73,16 +73,30 @@
                                     <segue destination="f0W-dx-phq" kind="presentation" identifier="logoutSegue" modalPresentationStyle="fullScreen" id="tE0-Ie-hZW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwo-gR-th7">
+                                <rect key="frame" x="177" y="662" width="60" height="60"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="03p-9Y-v81"/>
+                                    <constraint firstAttribute="height" constant="60" id="P8H-1v-YPY"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="plus" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="heavy"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Jn4-hX-w2g" secondAttribute="bottom" id="0j8-nZ-tN1"/>
+                            <constraint firstItem="wwo-gR-th7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Tf-hc-0bs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qro-CA-DYu" secondAttribute="bottom" constant="50" id="9XA-QB-5eB"/>
                             <constraint firstItem="I1A-tC-vNx" firstAttribute="leading" secondItem="qro-CA-DYu" secondAttribute="trailing" constant="60" id="EuW-3e-phW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="I1A-tC-vNx" secondAttribute="bottom" constant="50" id="FH2-3g-FL7"/>
                             <constraint firstItem="rzj-LK-IWV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="I6q-RS-gva"/>
                             <constraint firstItem="Jn4-hX-w2g" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KgQ-Gt-7Vo"/>
                             <constraint firstItem="rzj-LK-IWV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="TsQ-Eg-fY4"/>
+                            <constraint firstItem="I1A-tC-vNx" firstAttribute="top" secondItem="wwo-gR-th7" secondAttribute="bottom" constant="30" id="YLO-2a-fna"/>
                             <constraint firstItem="Jn4-hX-w2g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Yzk-pe-gAz"/>
                             <constraint firstItem="I1A-tC-vNx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cIG-df-tdK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pHV-qA-X0h" secondAttribute="bottom" constant="50" id="mFa-kV-N42"/>
@@ -97,6 +111,7 @@
                         <outlet property="mapView" destination="Jn4-hX-w2g" id="k0p-28-Olw"/>
                         <outlet property="optionButton" destination="rzj-LK-IWV" id="qan-J2-A4y"/>
                         <outlet property="routeButton" destination="I1A-tC-vNx" id="khD-Zn-1eC"/>
+                        <outlet property="snapButton" destination="wwo-gR-th7" id="MJE-Ao-ehD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -332,6 +347,12 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="heavy"/>
                                 </state>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0H-Eg-8sd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem id="cNg-JQ-NoR"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -340,6 +361,9 @@
                             <constraint firstItem="rPI-QL-dUe" firstAttribute="bottom" secondItem="CZN-hi-PdS" secondAttribute="bottom" constant="50" id="FfZ-P7-Iu1"/>
                             <constraint firstItem="CAD-O4-Bhp" firstAttribute="leading" secondItem="rPI-QL-dUe" secondAttribute="leading" constant="30" id="Fqo-GH-hl7"/>
                             <constraint firstItem="CZN-hi-PdS" firstAttribute="centerX" secondItem="Ppn-Ih-a5Z" secondAttribute="centerX" id="ICF-4K-3xT"/>
+                            <constraint firstItem="r0H-Eg-8sd" firstAttribute="trailing" secondItem="rPI-QL-dUe" secondAttribute="trailing" id="Ma1-IU-Sya"/>
+                            <constraint firstItem="r0H-Eg-8sd" firstAttribute="top" secondItem="rPI-QL-dUe" secondAttribute="top" id="QN6-5b-Tws"/>
+                            <constraint firstItem="r0H-Eg-8sd" firstAttribute="leading" secondItem="rPI-QL-dUe" secondAttribute="leading" id="SPj-GJ-VI7"/>
                             <constraint firstItem="CAD-O4-Bhp" firstAttribute="top" secondItem="rPI-QL-dUe" secondAttribute="top" constant="30" id="ak6-5H-PZm"/>
                             <constraint firstItem="AyO-6b-lSa" firstAttribute="leading" secondItem="rPI-QL-dUe" secondAttribute="leading" id="drP-CI-prA"/>
                             <constraint firstItem="rPI-QL-dUe" firstAttribute="bottom" secondItem="AyO-6b-lSa" secondAttribute="bottom" id="j0c-qU-mlM"/>
@@ -349,6 +373,7 @@
                     <connections>
                         <outlet property="backButton" destination="CAD-O4-Bhp" id="hQs-ya-JIg"/>
                         <outlet property="mapView" destination="AyO-6b-lSa" id="rfP-g9-2l4"/>
+                        <outlet property="navBar" destination="r0H-Eg-8sd" id="flO-Su-3RS"/>
                         <outlet property="shareButton" destination="CZN-hi-PdS" id="pCs-X6-5tE"/>
                     </connections>
                 </viewController>
@@ -412,5 +437,6 @@
         <image name="location.fill" catalog="system" width="128" height="115"/>
         <image name="person.crop.circle.badge.xmark" catalog="system" width="128" height="101"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
 </document>
