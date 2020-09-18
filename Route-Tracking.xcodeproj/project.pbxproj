@@ -19,6 +19,7 @@
 		8340B4B2250F113700815C77 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B4B1250F113700815C77 /* RegisterViewController.swift */; };
 		8340B4B6250F13F100815C77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8340B4B5250F13F100815C77 /* GoogleService-Info.plist */; };
 		8340B4B825107B9600815C77 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340B4B725107B9600815C77 /* HistoryViewController.swift */; };
+		83E3345C2515724400488F4E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E3345B2515724400488F4E /* Constants.swift */; };
 		D9D1215C308804280E404166 /* Pods_Route_Tracking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029DBA2337D5DFF048DC06C4 /* Pods_Route_Tracking.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		8340B4B1250F113700815C77 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8340B4B5250F13F100815C77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8340B4B725107B9600815C77 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		83E3345B2515724400488F4E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				8340B49B250F086400815C77 /* AppDelegate.swift */,
 				8340B49D250F086400815C77 /* SceneDelegate.swift */,
 				8340B49F250F086400815C77 /* ViewController.swift */,
+				83E3345B2515724400488F4E /* Constants.swift */,
 				83152E072512D22300B368CF /* App */,
 				83152E062512D1FA00B368CF /* Authentication */,
 				8340B4A1250F086400815C77 /* Main.storyboard */,
@@ -249,6 +252,7 @@
 				8340B49C250F086400815C77 /* AppDelegate.swift in Sources */,
 				8340B49E250F086400815C77 /* SceneDelegate.swift in Sources */,
 				83152E03251283AC00B368CF /* Models.swift in Sources */,
+				83E3345C2515724400488F4E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

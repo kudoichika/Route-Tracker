@@ -17,7 +17,7 @@ class DataViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
-    var geodata : GeoData!
+    var geodata : EntryData!
     var buttons : Array<UIButton>!
     
     override func viewDidLoad() {
@@ -30,21 +30,21 @@ class DataViewController: UIViewController, MKMapViewDelegate {
             button.layer.borderColor = UIColor.gray.cgColor
         }
         
-        navBar.topItem?.title = geodata.timestampToString()
+        navBar.topItem?.title = geodata.timeToString()
         
         backButton.layer.zPosition = navBar.layer.zPosition + 1
         
         mapView.delegate = self
         mapView.mapType = MKMapType(rawValue: 0)!
         
-        let annotation = MKPointAnnotation()
+        /*let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: geodata.latitude, longitude: geodata.longitude)
         mapView.addAnnotation(annotation)
         
         let center = CLLocationCoordinate2D(latitude: geodata.latitude, longitude: geodata.longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
         let region = MKCoordinateRegion(center: center, span: span)
-        self.mapView.setRegion(region, animated: true)
+        self.mapView.setRegion(region, animated: true)*/
 
         shareButton.addTarget(self, action: #selector(shareData), for: .touchUpInside)
         // Do any additional setup after loading the view.

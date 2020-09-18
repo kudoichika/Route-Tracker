@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         if Auth.auth().currentUser != nil {
-            let vc = storyboard.instantiateViewController(withIdentifier : "MainView") as? ViewController
+            let vc = storyboard.instantiateViewController(withIdentifier : K.View.mainView) as? ViewController
             window = UIWindow(windowScene: windowScene)
             window?.rootViewController = vc
             window?.makeKeyAndVisible()

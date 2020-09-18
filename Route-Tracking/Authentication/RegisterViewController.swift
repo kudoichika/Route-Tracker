@@ -35,11 +35,11 @@ class RegisterViewController: UIViewController {
                 print("Error creating user")
             } else {
                 let db = Firestore.firestore()
-                db.collection("userdata").addDocument(data : ["name" : name, "uid": result!.user.uid ]) { (error) in
+                db.collection(K.View.mainView).addDocument(data : ["name" : name, "uid": result!.user.uid ]) { (error) in
                     if error != nil {
                         print("Error storing userdata")
                     } else {
-                        let nextVC = self.storyboard?.instantiateViewController(withIdentifier : "MainView") as? ViewController
+                        let nextVC = self.storyboard?.instantiateViewController(withIdentifier : K.View.mainView) as? ViewController
                         self.view.window?.rootViewController = nextVC
                         self.view.window?.makeKeyAndVisible()
                     }

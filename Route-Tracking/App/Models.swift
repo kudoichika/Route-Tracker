@@ -50,3 +50,22 @@ class GeoData {
         return formatter.string(from: timestamp! as Date)
     }
 }
+
+class EntryData {
+    var starttime : NSDate!
+    var endtime : NSDate!
+    var docSnap : DocumentSnapshot!
+    init(snap : DocumentSnapshot) {
+        docSnap = snap
+        let ref = docSnap.data()
+        starttime = NSDate(timeIntervalSince1970: (ref!["starttime"] as! TimeInterval))
+        endtime = NSDate(timeIntervalSince1970: (ref!["endtime"] as! TimeInterval))
+    }
+    func timeToString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yyyy HH:mm"
+        return formatter.string(from: starttime! as Date)
+            + "-"
+            + formatter.string(from: endtime! as Date)
+    }
+}

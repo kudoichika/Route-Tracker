@@ -26,12 +26,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet weak var locButton: UIButton!
     @IBOutlet weak var snapButton: UIButton!
     var buttons : Array<UIButton>!
-    
-    var id : String!
+
     var timer : Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        K.Fire.uid = Auth.auth().currentUser!.uid
         
         buttons = [optionButton, dataButton, routeButton, locButton, snapButton]
         for button in buttons {
@@ -39,9 +40,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             button.layer.borderWidth = 1.5
             button.layer.borderColor = UIColor.gray.cgColor
         }
-        
-        let user = Auth.auth().currentUser
-        id = user!.uid
         
         mapView.delegate = self
         mapView.showsUserLocation = true
@@ -95,7 +93,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     @objc func storeLoc() {
         let data = GeoData(lat: location!.coordinate.latitude, long: location!.coordinate.longitude)
-        data.postData(id: id!, col: "location", subcol: "points")
+        data.postData(id: id!, col: K.Fire.locData, subcol: K.Fire.pointsData)
     }
     
     @objc func toggleRec() {

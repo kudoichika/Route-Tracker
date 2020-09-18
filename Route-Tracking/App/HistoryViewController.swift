@@ -35,9 +35,9 @@ extension UIView {
 }
 
 class CustomCell: UITableViewCell {
-    var object : GeoData? {
+    var object : EntryData? {
         didSet {
-            cellButton.setTitle(object!.timestampToString(), for: .normal)
+            cellButton.setTitle(object!.timeToString(), for: .normal)
         }
     }
     var cellButton : UIButton = {
@@ -62,7 +62,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
 
     @IBOutlet weak var tableView: UITableView!
     
-    var items : Array<GeoData>! = []
+    var items : Array<EntryData>! = []
     let cellId : String = "cell"
     
     override func viewDidLoad() {
@@ -74,18 +74,15 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func getDataAndParse() {
-        let id = Auth.auth().currentUser!.uid
         let db = Firestore.firestore()
-        let subdoc = db.collection("location").document(id).collection("points")
-        let query = subdoc.order(by: "time", descending: true)
+        let subdoc = db.collection(K.Fire.locData).document(K.Fire.uid).collection(K.Fire.entryData)
+        let query = subdoc.order(by: "starttime", descending: true)
         query.getDocuments { (snap, error) in
             if error != nil {
                 print("Error getting Query Documents")
             } else {
-                //print("Got", snap!.documents.count, "pieces of data")
                 for docsnap in snap!.documents {
-                    let dict = docsnap.data()
-                    self.items.append(GeoData(dict : dict))
+                    self.items.append(EntryData(id : docsnap.documentID))
                 }
                 self.tableView.reloadData()
             }

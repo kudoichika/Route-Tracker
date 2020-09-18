@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
             if error != nil {
                 print("Error creating user")
             } else {
-                let nextVC = self.storyboard?.instantiateViewController(withIdentifier : "MainView") as? ViewController
+                let nextVC = self.storyboard?.instantiateViewController(withIdentifier : K.View.mainView) as? ViewController
                 self.view.window?.rootViewController = nextVC
                 self.view.window?.makeKeyAndVisible()
             }
