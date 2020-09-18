@@ -28,6 +28,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var buttons : Array<UIButton>!
 
     var timer : Timer?
+    var recordDoc : DocumentReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,18 +94,24 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     @objc func storeLoc() {
         let data = GeoData(lat: location!.coordinate.latitude, long: location!.coordinate.longitude)
-        data.postData(id: id!, col: K.Fire.locData, subcol: K.Fire.pointsData)
+        data.postData(id: K.Fire.uid, col: K.Fire.locData, subcol: K.Fire.pointsData)
     }
     
     @objc func toggleRec() {
         if timer != nil {
             timer?.invalidate()
             timer = nil
+            //ad data (end time + type)
+            recordDoc = nil
             routeButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
         } else {
             timer = Timer.scheduledTimer(timeInterval: TimeInterval(1),
             target: self, selector: #selector(record),
             userInfo: nil, repeats: true)
+            let db = Firestore.firestore()
+            let entries = db.collection(K.Fire.locData).document(K.Fire.uid)
+            recordDoc = entries.collection(K.Fire.entryData).document()
+            //add data (start time + collection)
             routeButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
         }
     }
@@ -112,6 +119,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @objc func record() {
         //create collection in toggleRec()
         //add value every time called with timestamp
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

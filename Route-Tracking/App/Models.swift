@@ -55,11 +55,13 @@ class EntryData {
     var starttime : NSDate!
     var endtime : NSDate!
     var docSnap : DocumentSnapshot!
+    var type : String!
     init(snap : DocumentSnapshot) {
         docSnap = snap
         let ref = docSnap.data()
         starttime = NSDate(timeIntervalSince1970: (ref!["starttime"] as! TimeInterval))
         endtime = NSDate(timeIntervalSince1970: (ref!["endtime"] as! TimeInterval))
+        type = ref!["datatype"] as! String
     }
     func timeToString() -> String {
         let formatter = DateFormatter()
