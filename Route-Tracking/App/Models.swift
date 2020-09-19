@@ -15,9 +15,9 @@ class GeoData {
     var latitude : CLLocationDegrees!
     var longitude : CLLocationDegrees!
     var timestamp : NSDate!
-    init(lat : CLLocationDegrees, long : CLLocationDegrees) {
-        latitude = lat
-        longitude = long
+    init(loc : CLLocation) {
+        latitude = loc.coordinate.latitude
+        longitude = loc.coordinate.longitude
         timestamp = NSDate()
     }
     init (dict : [String : Any]) {
@@ -60,8 +60,12 @@ class EntryData {
         docSnap = snap
         let ref = docSnap.data()
         starttime = NSDate(timeIntervalSince1970: (ref!["starttime"] as! TimeInterval))
-        endtime = NSDate(timeIntervalSince1970: (ref!["endtime"] as! TimeInterval))
-        type = ref!["datatype"] as! String
+        if ref!["endtime"] != nil {
+            endtime = NSDate(timeIntervalSince1970: (ref!["endtime"] as! TimeInterval))
+        } else {
+            endtime = nil
+        }
+        type = (ref!["datatype"] as! String)
     }
     func timeToString() -> String {
         let formatter = DateFormatter()

@@ -18,7 +18,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
     @IBOutlet weak var mapView: MKMapView!
     var locationManager: CLLocationManager!
-    var location : CLLocation!
+    var location : GeoData!
     
     @IBOutlet weak var optionButton: UIButton!
     @IBOutlet weak var dataButton: UIButton!
@@ -61,11 +61,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         routeButton.addTarget(self, action: #selector(toggleRec), for: .touchUpInside)
         locButton.addTarget(self, action: #selector(centerLoc), for: .touchUpInside)
-        snapButton.addTarget(self, action: #selector(storeLoc), for: .touchUpInside)
+        //snapButton.addTarget(self, action: #selector(storeLoc), for: .touchUpInside)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        location = locations.last as CLLocation?
+        location = GeoData(loc : (locations.last as CLLocation?)!)
     }
     
     @objc func centerLoc() {
@@ -75,7 +75,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         mapCamera.altitude = 500
         mapCamera.heading = 45
         mapView.camera = mapCamera*/
-        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+        let center = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
         let region = MKCoordinateRegion(center: center, span: span)
         switch (mapView.mapType) {
@@ -92,16 +92,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         mapView.setRegion(region, animated: true)
     }
     
-    @objc func storeLoc() {
-        let data = GeoData(lat: location!.coordinate.latitude, long: location!.coordinate.longitude)
-        data.postData(id: K.Fire.uid, col: K.Fire.locData, subcol: K.Fire.pointsData)
-    }
-    
     @objc func toggleRec() {
         if timer != nil {
             timer?.invalidate()
             timer = nil
-            //ad data (end time + type)
+            recordDoc?.setData(["endtime" : NSDate().timeIntervalSince1970], merge: true)
+            //store data type
             recordDoc = nil
             routeButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
         } else {
@@ -111,15 +107,19 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             let db = Firestore.firestore()
             let entries = db.collection(K.Fire.locData).document(K.Fire.uid)
             recordDoc = entries.collection(K.Fire.entryData).document()
-            //add data (start time + collection)
+            recordDoc?.setData(["starttime" : NSDate().timeIntervalSince1970])
             routeButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
         }
     }
     
     @objc func record() {
-        //create collection in toggleRec()
-        //add value every time called with timestamp
-        
+        recordDoc?.collection(K.Fire.pointsData).addDocument(data: location.toDict()) { (error) in
+            if error != nil {
+                print("Error storing geolocation")
+            } else {
+                print("Successful stored location")
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

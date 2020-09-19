@@ -82,7 +82,10 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
                 print("Error getting Query Documents")
             } else {
                 for docsnap in snap!.documents {
-                    self.items.append(EntryData(id : docsnap.documentID))
+                    let entry = EntryData(snap : docsnap)
+                    if entry.endtime != nil {
+                        self.items.append(entry)
+                    }
                 }
                 self.tableView.reloadData()
             }
