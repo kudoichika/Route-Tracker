@@ -33,7 +33,7 @@ class GeoData {
             "time" : timestamp.timeIntervalSince1970
         ]
     }
-    func postData(id : String, col : String, subcol : String) {
+    /*func postData(id : String, col : String, subcol : String) {
         let db = Firestore.firestore()
         let doc = db.collection(col).document(id)
         doc.collection(subcol).addDocument(data : toDict()) { (error) in
@@ -43,7 +43,7 @@ class GeoData {
                 print("Successful stored location")
             }
         }
-    }
+    }*/
     func timestampToString() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd MMM yyyy HH:mm"
@@ -65,7 +65,7 @@ class EntryData {
         } else {
             endtime = nil
         }
-        type = (ref!["datatype"] as! String)
+        //type = (ref!["datatype"] as! String)
     }
     func timeToString() -> String {
         let formatter = DateFormatter()

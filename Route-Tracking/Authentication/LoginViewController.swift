@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
         let password = passwordTextField.text!.trimmingCharacters(in : .whitespacesAndNewlines)
         Auth.auth().signIn(withEmail: email, password : password){ (result, error) in
             if error != nil {
-                print("Error creating user")
+                print("Error logging in user")
             } else {
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier : K.View.mainView) as? ViewController
                 self.view.window?.rootViewController = nextVC
