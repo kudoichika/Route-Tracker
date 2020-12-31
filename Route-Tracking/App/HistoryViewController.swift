@@ -38,6 +38,7 @@ class CustomCell: UITableViewCell {
     var object : EntryData? {
         didSet {
             cellButton.setTitle(object!.timeToString(), for: .normal)
+            cellButton.setTitleColor(UIColor.black, for: .normal)
         }
     }
     var cellButton : UIButton = {
