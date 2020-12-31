@@ -1,8 +1,9 @@
 # Route-Tracker
 An iOS app that lets you record/snapshot your location history. (Kinda like the Google Maps feature, but with Apple's MapKit)
 
-![Dark Mode](https://github.com/usjpin/Route-Tracker/blob/master/Screenshots/darkmode.png?raw=true) | ![Light Mode](https://github.com/usjpin/Route-Tracker/blob/master/Screenshots/lightmode.png?raw=true)
-![Data View 1](https://github.com/usjpin/Route-Tracker/blob/master/Screenshots/dataview1.png?raw=true) | ![History View](https://github.com/usjpin/Route-Tracker/blob/master/Screenshots/historyview.png?raw=true) | ![Data View 2](https://github.com/usjpin/Route-Tracker/blob/master/Screenshots/dataview2.png?raw=true)
+<div style="width:100%">![Dark Mode](https://github.com/usjpin/Route-Tracker/blob/master/Screenshots/darkmode.png?raw=true) | ![Light Mode](https://github.com/usjpin/Route-Tracker/blob/master/Screenshots/lightmode.png?raw=true) </div>
+
+<div style="width:100%">![Data View 1](https://github.com/usjpin/Route-Tracker/blob/master/Screenshots/dataview1.png?raw=true) | ![History View](https://github.com/usjpin/Route-Tracker/blob/master/Screenshots/historyview.png?raw=true) | ![Data View 2](https://github.com/usjpin/Route-Tracker/blob/master/Screenshots/dataview2.png?raw=true)</div>
 
 ### Features
 - Start recording or take a snapshot anytime anywhere!
